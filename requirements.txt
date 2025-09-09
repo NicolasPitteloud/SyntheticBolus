@@ -1,0 +1,7 @@
+Flask
+pydicom
+Pillow
+numpy
+flask-cors
+scikit-image
+shapely

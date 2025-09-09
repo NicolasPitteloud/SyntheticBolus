@@ -1,0 +1,11 @@
+**/original/*
+!**/original/.gitkeep
+**/modified/*
+!**/modified/.gitkeep
+.venv/
+node_modules/
+__pycache__/
+dist/
+.vite/
+.env
+.vscode
