@@ -128,7 +128,8 @@ def save_modified_ct_series(sorted_slices, raw_mask, mask_dict, rtstructure, pre
                 if "ReferencedSOPInstanceUID" in ref_sop:
                     ref_sop.ReferencedSOPInstanceUID = uid_modifier(
                         ref_sop.ReferencedSOPInstanceUID, prefix, suffix_length)
-        ct_slice.IrradiationEventUID = uid_modifier(ct_slice.IrradiationEventUID, prefix, suffix_length)
+        if hasattr(ct_slice, 'IrradiationEventUID'):
+            ct_slice.IrradiationEventUID = uid_modifier(ct_slice.IrradiationEventUID, prefix, suffix_length)
         #ct_slice.StudyInstanceUID = uid_modifier(ct_slice.StudyInstanceUID, prefix, suffix_length) Removed to preserve registration with original
         ct_slice.SeriesInstanceUID = uid_modifier(ct_slice.SeriesInstanceUID, prefix, suffix_length)
         #ct_slice.FrameOfReferenceUID = uid_modifier(ct_slice.FrameOfReferenceUID, prefix, suffix_length) Removed to preserve registration with original
