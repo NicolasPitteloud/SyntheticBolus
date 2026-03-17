@@ -2,7 +2,7 @@
 
 Directly integrate an **RT bolus structure** into a CT dataset.
 
-This web app modifies **HU values** in the CT pixel array using a bolus structure (Or any structure with the word bolus in the name) from an **RT Structure Set**. This allows the **Ethos Management Platform** to handle external bolus seamlessly.
+This web app modifies **HU values** in the CT pixel array using a bolus structure (or any structure with the word bolus in the name) from an **RT Structure Set**. This allows the **Ethos Management Platform** to handle external bolus seamlessly.
 
 ---
 
