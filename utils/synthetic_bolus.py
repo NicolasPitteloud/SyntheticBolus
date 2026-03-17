@@ -176,8 +176,9 @@ def rtstructure(rtstruct_path, prefix, suffix_length, roi_list):
     # Replace bolus type
     for roi in ds_mod.RTROIObservationsSequence:
         if roi.ReferencedROINumber in roi_list:            
-            roi.RTROIInterpretedType = 'CONTROL'            
-            del roi.ROIPhysicalPropertiesSequence
+            roi.RTROIInterpretedType = 'CONTROL'
+            if hasattr(roi, "ROIPhysicalPropertiesSequence"):
+                del roi.ROIPhysicalPropertiesSequence
           
     return ds_mod
 

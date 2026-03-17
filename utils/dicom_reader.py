@@ -1,4 +1,3 @@
-from utils.config import dicom_original_path
 import numpy as np
 import pydicom
 from pathlib import Path
@@ -63,7 +62,7 @@ def parse_rtstruct(path, filename, uid_to_index, origin, spacing):
         name = roi.ROIName
         color = list(contours.ROIDisplayColor) if hasattr(contours.ROIDisplayColor, '__iter__') else []
 
-        if observation.RTROIInterpretedType == 'BOLUS':
+        if observation.RTROIInterpretedType == 'BOLUS' or 'bolus' in roi.ROIName.lower():
             for_mask.append([name, observation.ReferencedROINumber])
 
         structure_data = {}
