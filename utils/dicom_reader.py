@@ -32,7 +32,7 @@ def ct_slice_info(path):
     orientation = slices[0]["orientation"]
     normal = np.cross(orientation[:3], orientation[3:])
     reverse = normal[2] < 0
-    slices.sort(key=lambda s: s["position"][2], reverse=reverse)
+    slices.sort(key=lambda s: s["position"][2], reverse=bool(reverse))
 
     uid_to_index = {s["uid"]: i for i, s in enumerate(slices)}
 

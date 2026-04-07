@@ -9,3 +9,5 @@ dist/
 .vite/
 .env
 .vscode
+dockerfile
+.dockerignore
